@@ -3,13 +3,18 @@
 .Footer {
   padding: 12rem 2rem 6rem;
   background: $clr-n-darkcyan;
-  align-self: stretch;
   color: white;
   font-size: 1.75rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5em;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   img.logo {
     height: 1.5em;
@@ -47,11 +52,16 @@
     list-style: none;
   }
 
+  .copyright {
+    font-size: 0.75em;
+    align-self: center;
+    min-width: fit-content;
+  }
+
   .socials {
     display: flex;
     flex-direction: column;
     align-self: stretch;
-    gap: 1.75em;
     font-size: 1.25rem;
 
     .links {
@@ -60,19 +70,72 @@
       gap: 1em;
       justify-content: center;
 
+      a::after {
+        all: unset;
+      }
+
       [class^="icon-"] {
         border-radius: 50%;
         border: 2px solid white;
-        grid-row: 1;
         height: 2.75em;
         width: 2.75em;
-        display: grid;
-        place-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          border-color: $clr-p-pink;
+          // See https://codepen.io/sosuke/pen/Pjoqqp for a tool to find exactly the `filter()` you need for a given color.
+          img {
+            filter: invert(55%) sepia(28%) saturate(6602%) hue-rotate(294deg)
+              brightness(101%) contrast(101%);
+          }
+        }
+
         img {
           height: 50%;
           filter: brightness(0) invert(1);
         }
       }
+    }
+  }
+}
+
+@media screen and (min-width: $media-desktop) {
+  .Footer {
+    font-size: 0.9em;
+    padding: 10rem 6rem 6rem;
+
+    img.logo {
+      height: 2.2rem;
+    }
+    .content {
+      flex-direction: row;
+      gap: 2rem;
+
+      > * {
+        flex: 1 0 30%;
+      }
+
+      ul.sitenav {
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 8em;
+        align-content: center;
+        padding-left: 4rem;
+
+        .link:nth-child(-n + 3) {
+          margin-right: 6rem;
+        }
+      }
+    }
+
+    .copyright {
+      align-self: flex-end;
+    }
+
+    .socials {
+      font-size: 0.75rem;
     }
   }
 }

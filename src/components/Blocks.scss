@@ -1,6 +1,14 @@
+@import "/src/ken.scss";
+
 .Blocks {
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 2.5rem;
   padding: 0 2.5rem;
+}
+
+@media screen and (min-width: $media-desktop) {
+  .Blocks {
+    padding: 10rem 6rem 0;
+  }
 }

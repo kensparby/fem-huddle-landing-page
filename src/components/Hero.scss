@@ -1,12 +1,14 @@
 @import "/src/ken.scss";
 
 .Hero {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   align-items: center;
-  gap: 3rem;
+  justify-items: center;
   padding: 8rem 4rem 4rem;
   font-size: 1.75rem;
+  gap: 3rem;
   background-color: $clr-n-palecyan;
   background-image: linear-gradient(to bottom, white 0%, transparent 4em),
     url("/images/bg-hero-mobile.svg");
@@ -14,24 +16,63 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  h1.title {
-    font-size: 1.5em;
-  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
 
-  button.btn {
-    background: $clr-p-pink;
-    color: white;
-    font-weight: 600;
-    font-size: 0.75em;
-    padding: 1.25rem 5rem;
-    border-radius: 999px;
-    border: 0;
+    h1.title {
+      font-size: 1.5em;
+    }
+    button.btn {
+      background: $clr-p-pink;
+      color: white;
+      font-weight: 600;
+      font-size: 0.75em;
+      padding: 1.25rem 5rem;
+      border-radius: 999px;
+      border: 0;
 
-    &:hover {
-      background: lighten($clr-p-pink, 15%);
+      &:hover {
+        background: lighten($clr-p-pink, 15%);
+      }
     }
   }
+
   img {
     margin: 3rem 0 0;
+  }
+}
+
+@media screen and (min-width: $media-desktop) {
+  .Hero {
+    font-size: 1.1rem;
+    grid-template-columns: 1fr 1.25fr;
+    text-align: left;
+    gap: 2rem;
+    padding: 0 4rem 2rem;
+
+    background-image: linear-gradient(to bottom, white 0%, transparent 4em),
+      url("/images/bg-hero-desktop.svg");
+
+    .content {
+      align-items: flex-start;
+      grid-column: 1;
+      h1.title {
+        font-size: 2.2em;
+      }
+
+      button.btn {
+        padding: 1rem 4rem;
+        justify-self: start;
+      }
+    }
+
+    > img {
+      grid-row: 1 / span 3;
+      grid-column: 2;
+      margin: 0;
+    }
   }
 }

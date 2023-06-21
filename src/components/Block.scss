@@ -4,18 +4,52 @@
   box-shadow: lighten($clr-n-grayblue, 35%) 0px 2px 8px 0px;
   border-radius: 1.5rem;
   font-size: 1.5rem;
-  padding: 4rem 4rem;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   img {
     padding: 3rem 2rem;
   }
 
-  p {
-    color: $clr-n-grayblue;
+  .content {
+    p {
+      color: $clr-n-grayblue;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      margin-block: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: $media-desktop) {
+  .Block {
+    font-size: 1.1rem;
+    flex-direction: row;
+    gap: 8rem;
+    padding: 3rem 3rem 3rem 6rem;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      flex: 1 0 50%;
+
+      h3 {
+        margin-block: 1rem;
+      }
+    }
+    > img {
+      max-width: 35%;
+      padding: unset;
+    }
   }
 
-  h3 {
-    font-size: 1.5em;
-    margin-block: 2rem;
+  .Block:nth-child(2n + 1) {
+    flex-direction: row-reverse;
   }
 }
