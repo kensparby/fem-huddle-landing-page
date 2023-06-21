@@ -1,0 +1,37 @@
+@import "/src/ken.scss";
+
+.Hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 8rem 4rem 4rem;
+  font-size: 1.75rem;
+  background-color: $clr-n-palecyan;
+  background-image: linear-gradient(to bottom, white 0%, transparent 4em),
+    url("/images/bg-hero-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1.title {
+    font-size: 1.5em;
+  }
+
+  button.btn {
+    background: $clr-p-pink;
+    color: white;
+    font-weight: 600;
+    font-size: 0.75em;
+    padding: 1.25rem 5rem;
+    border-radius: 999px;
+    border: 0;
+
+    &:hover {
+      background: lighten($clr-p-pink, 15%);
+    }
+  }
+  img {
+    margin: 3rem 0 0;
+  }
+}

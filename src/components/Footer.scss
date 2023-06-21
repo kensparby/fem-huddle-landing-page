@@ -1,0 +1,78 @@
+@import "/src/ken.scss";
+
+.Footer {
+  padding: 12rem 2rem 6rem;
+  background: $clr-n-darkcyan;
+  align-self: stretch;
+  color: white;
+  font-size: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5em;
+
+  img.logo {
+    height: 1.5em;
+    filter: brightness(0) invert(1);
+  }
+
+  .contactinfo {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+    gap: 1.5em;
+
+    .location,
+    .phone,
+    .email {
+      display: grid;
+      grid-template-columns: 2.5em auto;
+      grid-template-rows: 2.5em fit-content;
+      text-align: left;
+
+      img {
+        height: 1.15em;
+        margin: 0.3em auto auto 0;
+      }
+    }
+  }
+
+  ul.sitenav {
+    font-size: 1.15em;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    list-style: none;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 1.75em;
+    font-size: 1.25rem;
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+      justify-content: center;
+
+      [class^="icon-"] {
+        border-radius: 50%;
+        border: 2px solid white;
+        grid-row: 1;
+        height: 2.75em;
+        width: 2.75em;
+        display: grid;
+        place-items: center;
+        img {
+          height: 50%;
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+}

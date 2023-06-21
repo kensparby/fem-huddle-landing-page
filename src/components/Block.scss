@@ -1,0 +1,21 @@
+@import "/src/ken.scss";
+
+.Block {
+  box-shadow: lighten($clr-n-grayblue, 35%) 0px 2px 8px 0px;
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
+  padding: 4rem 4rem;
+
+  img {
+    padding: 3rem 2rem;
+  }
+
+  p {
+    color: $clr-n-grayblue;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin-block: 2rem;
+  }
+}

@@ -1,0 +1,36 @@
+@import "/src/ken.scss";
+
+.CTA {
+  box-shadow: lighten($clr-n-grayblue, 35%) 0px -4px 12px -4px;
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  gap: 3rem;
+  background: #fff;
+  margin-bottom: -6rem;
+  z-index: 1;
+
+  .btn {
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    padding: 1.25rem 5rem;
+    font-weight: 600;
+    color: $clr-n-darkcyan;
+    border: 0;
+    background: $clr-p-pink;
+    box-shadow: lighten($clr-n-grayblue, 20%) 0px 2px 8px 0px;
+    transition: all 50ms ease;
+    color: #fff;
+
+    &:hover {
+      background: lighten($clr-p-pink, 15%);
+    }
+  }
+}
